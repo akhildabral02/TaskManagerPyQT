@@ -2,9 +2,10 @@ import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow,QVBoxLayout,QGridLayout,QPushButton,QGroupBox,QCheckBox,QDialog
 from PyQt5.QtGui import QIcon
 
-class Application(QDialog,QMainWindow):
+class Application(QMainWindow,QDialog):
     def __init__(self):
-        super().__init__()
+        QMainWindow.__init__(self,parent=None)
+        QDialog.__init__(self,parent=None)
         self.title = "Task Manager -PyQt5"
         self.left = 100
         self.top = 200
