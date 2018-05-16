@@ -26,8 +26,8 @@ class GridWidget(QWidget):
     def createGridLayout(self):
         self.horizontalGroupBox = QGroupBox("Grid")
         layout = QGridLayout()
-        layout.setColumnStretch(1, 4)
-        layout.setColumnStretch(2, 4)
+        layout.setColumnStretch(1, 2)
+        layout.setColumnStretch(2, 2)
 
         layout.addWidget(QCheckBox('1'), 0, 0)
         layout.addWidget(QPushButton('2'), 0, 1)
