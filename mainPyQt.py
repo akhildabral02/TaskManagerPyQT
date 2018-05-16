@@ -16,7 +16,7 @@ class Application(QWidget):
     def initUI(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
-        self.setWindowIcon(QIcon("C:\\git\\TaskManagerPyQT\\task_manager_image.png"))
+        self.setWindowIcon(QIcon("C:\\git\\TaskManagerPyQT\\images\\task_manager_image.png"))
 
         # Lets start with Basic Menu Bar Creation
         # mainMenu = self.menuBar()
