@@ -1,7 +1,8 @@
 import sys
-from PyQt5.QtWidgets import QApplication,QDialog,QBoxLayout,QPushButton,QCheckBox,QGridLayout,QGroupBox,QVBoxLayout
+from PyQt5.QtWidgets import QApplication,QDialog,QBoxLayout,QPushButton,QCheckBox,QGridLayout,QGroupBox,QVBoxLayout, QWidget
 from PyQt5.QtGui import QIcon
-class Application(QDialog):
+
+class GridWidget(QWidget):
     def __init__(self):
         super().__init__()
         self.title = "Task Manager -PyQt5"
@@ -43,5 +44,5 @@ class Application(QDialog):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    w = Application()
+    w = GridWidget()
     sys.exit(app.exec_())

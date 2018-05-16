@@ -1,8 +1,9 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow,QLabel
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow,QLabel, QVBoxLayout
 from PyQt5.QtGui import QIcon
+import GridWidgets
 
-class Application(QMainWindow):
+class Application(QWidget):
     def __init__(self):
         super().__init__()
         self.title = "Task Manager -PyQt5"
@@ -18,16 +19,20 @@ class Application(QMainWindow):
         self.setWindowIcon(QIcon("C:\\git\\TaskManagerPyQT\\task_manager_image.png"))
 
         # Lets start with Basic Menu Bar Creation
-        mainMenu = self.menuBar()
-        fileMenu = mainMenu.addMenu('File')
-        editMenu = mainMenu.addMenu('Edit')
-        viewMenu = mainMenu.addMenu('View')
-        searchMenu = mainMenu.addMenu('Search')
-        toolsMenu = mainMenu.addMenu('Tools')
-        helpMenu = mainMenu.addMenu('Help')
+        # mainMenu = self.menuBar()
+        # fileMenu = mainMenu.addMenu('File')
+        # editMenu = mainMenu.addMenu('Edit')
+        # viewMenu = mainMenu.addMenu('View')
+        # searchMenu = mainMenu.addMenu('Search')
+        # toolsMenu = mainMenu.addMenu('Tools')
+        # helpMenu = mainMenu.addMenu('Help')
 
         # Label needed for Task Status
-        self.label = QLabel("STATUS")
+        windowLayout = QVBoxLayout()
+        windowLayout.addWidget(GridWidgets.GridWidget())
+        self.setLayout(windowLayout)
+
+        #self.label = QLabel("STATUS")
 
 
         self.show()
