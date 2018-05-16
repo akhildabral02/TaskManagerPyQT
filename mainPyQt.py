@@ -16,7 +16,7 @@ class Application(QWidget):
     def initUI(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
-        self.setWindowIcon(QIcon("C:\\git\\TaskManagerPyQT\\images\\task_manager_image.png"))
+        self.setWindowIcon(QIcon("images\\task_manager_image.png"))
 
         # Lets start with Basic Menu Bar Creation
         # mainMenu = self.menuBar()
@@ -27,12 +27,9 @@ class Application(QWidget):
         # toolsMenu = mainMenu.addMenu('Tools')
         # helpMenu = mainMenu.addMenu('Help')
 
-        # Label needed for Task Status
         windowLayout = QVBoxLayout()
         windowLayout.addWidget(GridWidgets.GridWidget())
         self.setLayout(windowLayout)
-
-        #self.label = QLabel("STATUS")
 
 
         self.show()
