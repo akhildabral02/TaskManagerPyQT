@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QAction, QTableWidget, QTableWidgetItem, QVBoxLayout
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QAction, QTableWidget, QTableWidgetItem, QVBoxLayout,QLabel
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
 
@@ -33,8 +33,10 @@ class App(QWidget):
         self.tableWidget = QTableWidget()
         self.tableWidget.setRowCount(4)
         self.tableWidget.setColumnCount(2)
-        self.tableWidget.setItem(0, 0, QTableWidgetItem("Cell (1,1)"))
-        self.tableWidget.setItem(0, 1, QTableWidgetItem("Cell (1,2)"))
+        status = QLabel()
+        status.setText("Status")
+        self.tableWidget.setItem(0, 0, QTableWidgetItem("TASK STATUS"))
+        self.tableWidget.setItem(0, 1, QTableWidgetItem("TASK DESCRIPTION"))
         self.tableWidget.setItem(1, 0, QTableWidgetItem("Cell (2,1)"))
         self.tableWidget.setItem(1, 1, QTableWidgetItem("Cell (2,2)"))
         self.tableWidget.setItem(2, 0, QTableWidgetItem("Cell (3,1)"))

@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication,QDialog,QBoxLayout,QPushButton,QCheckBox,QGridLayout,QGroupBox,QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QApplication,QDialog,QBoxLayout,QPushButton,QCheckBox,QGridLayout,QGroupBox,QVBoxLayout, QWidget,QLabel
 from PyQt5.QtGui import QIcon
 
 class GridWidget(QWidget):
@@ -29,9 +29,13 @@ class GridWidget(QWidget):
         layout.setColumnStretch(1, 2)
         layout.setColumnStretch(2, 2)
 
-        layout.addWidget(QCheckBox('1'), 0, 0)
-        layout.addWidget(QPushButton('2'), 0, 1)
-        layout.addWidget(QPushButton('3'), 0, 2)
+        task_status = QLabel()
+        task_status.setText("Task Status")
+        task_description = QLabel()
+        task_description.setText("Task Description")
+
+        layout.addWidget(task_status,0,0)
+        layout.addWidget(task_description,0,2)
         layout.addWidget(QPushButton('4'), 1, 0)
         layout.addWidget(QPushButton('5'), 1, 1)
         layout.addWidget(QPushButton('6'), 1, 2)
