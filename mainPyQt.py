@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QLabel, QVBoxLayout,QAction
 from PyQt5.QtGui import QIcon
 import GridWidgets
+import Table
 
 
 class Application(QMainWindow):
@@ -11,7 +12,7 @@ class Application(QMainWindow):
         self.left = 100
         self.top = 200
         self.width = 600
-        self.height = 300
+        self.height = 600
         self.initUI()
 
     def initUI(self):
@@ -29,15 +30,16 @@ class Application(QMainWindow):
         helpMenu = mainMenu.addMenu('Help')
 
         # Individual Sub Menu added for File Menu
-        exitButton = QAction(QIcon('exit24.png'), 'Exit', self)
+        exitButton = QAction(QIcon('images\\exit.svg'), 'Exit', self)
         exitButton.setShortcut('Ctrl+Q')
         exitButton.setStatusTip('Exit application')
         exitButton.triggered.connect(self.close)
         fileMenu.addAction(exitButton)
 
-        # windowLayout = QVBoxLayout()
-        # windowLayout.addWidget(GridWidgets.GridWidget())
-        # self.setLayout(windowLayout)
+        windowLayout = QVBoxLayout()
+        windowLayout.addWidget(Table.App())
+        #self.setCentralWidget(GridWidgets.GridWidget())
+        self.setCentralWidget(Table.App())
 
 
 if __name__ == "__main__":
